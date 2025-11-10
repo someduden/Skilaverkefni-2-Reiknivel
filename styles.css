@@ -5,7 +5,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .header-left {
@@ -20,7 +20,15 @@ header {
 
 main {
     background-color: burlywood;
-    padding: 20px;
+    padding: 1rem 0.75rem;
+}
+
+section {
+    background-color: azure;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
 }
 
 /* Calculator */
@@ -51,4 +59,37 @@ main {
 .footer {
     background-color: cornflowerblue;
     padding: 5px;
+}
+
+/* Fuck shit */
+
+input[type=range][orient=vertical] {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+    width: 16px;
+    vertical-align: bottom;
+}
+
+.tugir {
+    position: relative;
+    bottom: 35px;
+}
+
+.hell {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-container {
+    max-width: fit-content;
+}
+
+.selector {
+    max-width: fit-content;
+}
+
+#arithOperators {
+    max-width: fit-content;
+    align-content: center;
 }

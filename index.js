@@ -32,4 +32,52 @@ function calculateResult() {
     output.value = result;
 }
 
-// 
+// I HATE EVERYTHING AND EVERYONE
+
+let vertSlider1 = document.getElementById('verticalSlider')
+let horSlider1 = document.getElementById('horizontalSlider')
+let evilOutput = document.getElementById('value')
+let evilOutput2 = document.getElementById('value2')
+let vertSlider2 = document.getElementById('verticalSlider2')
+let horSlider2 = document.getElementById('horizontalSlider2')
+
+function updateValue() {
+   const value1 = Number(vertSlider1.value)
+   const value2 = Number(horSlider1.value)
+
+   const total = value1 + value2
+   evilOutput.textContent = total
+}
+
+function updateValue2() {
+    const value1 = Number(vertSlider2.value)
+    const value2 = Number(horSlider2.value)
+
+    const total = value1 + value2
+    evilOutput2.textContent = total
+}
+
+vertSlider1.addEventListener('input', updateValue);
+horSlider1.addEventListener('input', updateValue);
+
+vertSlider2.addEventListener('input', updateValue2);
+horSlider2.addEventListener('input', updateValue2);
+
+updateValue();
+updateValue2();
+
+// Operators
+
+const checkboxes = document.querySelectorAll('input[name="operators"]');
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            })
+        }
+    })
+})

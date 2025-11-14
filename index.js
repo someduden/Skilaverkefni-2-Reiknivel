@@ -47,6 +47,7 @@ function updateValue() {
 
    const total = value1 + value2
    evilOutput.textContent = total
+   
 }
 
 function updateValue2() {
@@ -81,3 +82,21 @@ checkboxes.forEach(checkbox => {
         }
     })
 })
+
+
+
+
+function evilCalc() {
+    const value1 = Number(vertSlider1.value)
+    const value2 = Number(horSlider1.value)
+    const total = value1 + value2
+
+    const value3 = Number(vertSlider2.value)
+    const value4 = Number(horSlider2.value)
+    const total2 = value3 + value4
+
+    const result = ` ${total} + ${total2} `
+    
+}
+
+evilCalc()

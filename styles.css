@@ -1,7 +1,7 @@
 /* Header stuff */
 
 header {
-  background-color: aqua;
+  background-color: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,10 +16,16 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.logo {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
 /* Main stuff */
 
 main {
-    background-color: burlywood;
+    background-color: lightgray;
     padding: 1rem 0.75rem;
 }
 
@@ -31,7 +37,7 @@ section {
     border-radius: 0.5rem;
 }
 
-/* Calculator */
+/* First calculator */
 
 .calcCont {
     display: flex;
@@ -46,8 +52,8 @@ section {
 
 .calcWhole button {
     border: solid 1px black;
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .input-output {
@@ -57,11 +63,11 @@ section {
 /* Footer stuff */
 
 .footer {
-    background-color: cornflowerblue;
+    background-color: antiquewhite;
     padding: 5px;
 }
 
-/* Fuck shit */
+/* Evil Calculator */
 
 input[type=range][orient=vertical] {
     writing-mode: vertical-lr;
@@ -81,8 +87,15 @@ input[type=range][orient=vertical] {
     gap: 10px;
 }
 
+.hell p {
+    display: block;
+    align-self: center;
+    padding: 1rem;
+}
+
 .slider-container {
     max-width: fit-content;
+    padding: 1rem;
 }
 
 .selector {
@@ -92,4 +105,22 @@ input[type=range][orient=vertical] {
 #arithOperators {
     max-width: fit-content;
     align-content: center;
+}
+
+#evilEqual {
+    align-self: center;
+    height: 50px;
+    width: 50px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .calcCont {
+        flex-direction: row;
+    }
+    
+    .hell {
+        flex-direction: column;
+    }
 }

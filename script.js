@@ -34,12 +34,12 @@ function calculateResult() {
 
 // I HATE EVERYTHING AND EVERYONE
 
-let vertSlider1 = document.getElementById('verticalSlider')
-let horSlider1 = document.getElementById('horizontalSlider')
-let evilOutput = document.getElementById('value')
-let evilOutput2 = document.getElementById('value2')
-let vertSlider2 = document.getElementById('verticalSlider2')
-let horSlider2 = document.getElementById('horizontalSlider2')
+const vertSlider1 = document.getElementById('verticalSlider')
+const horSlider1 = document.getElementById('horizontalSlider')
+const evilOutput = document.getElementById('value')
+const evilOutput2 = document.getElementById('value2')
+const vertSlider2 = document.getElementById('verticalSlider2')
+const horSlider2 = document.getElementById('horizontalSlider2')
 
 function updateValue() {
    const value1 = Number(vertSlider1.value)
@@ -84,19 +84,31 @@ checkboxes.forEach(checkbox => {
 })
 
 
-
+const help = document.getElementById('help')
 
 function evilCalc() {
-    const value1 = Number(vertSlider1.value)
-    const value2 = Number(horSlider1.value)
-    const total = value1 + value2
+    const total1 = Number(vertSlider1.value) + Number(horSlider1.value);
+    const total2 = Number(vertSlider2.value) + Number(horSlider2.value);
 
-    const value3 = Number(vertSlider2.value)
-    const value4 = Number(horSlider2.value)
-    const total2 = value3 + value4
+    const checked = document.querySelector('input[name=operators]:checked');
 
-    const result = ` ${total} + ${total2} `
-    
+    if (!checked) {
+        help.textContent = "Select an operator";
+        return
+    }
+
+    const op = checked.value;
+    let result;
+
+    switch(op) {
+        case '+': result = total1 + total2; break;
+        case '-': result = total1 - total2; break;
+        case '*': result = total1 * total2; break;
+        case '/': result = total2 !== 0 ? total1 / total2 : "Infinity"; break;
+    }
+
+    help.textContent = result;
+
 }
 
 evilCalc()

@@ -100,11 +100,14 @@ function evilCalc() {
     const op = checked.value;
     let result;
 
-    switch(op) {
-        case '+': result = total1 + total2; break;
-        case '-': result = total1 - total2; break;
-        case '*': result = total1 * total2; break;
-        case '/': result = total2 !== 0 ? total1 / total2 : "Infinity"; break;
+    if(op.includes('+')) {
+        result = total1 + total2;
+    } else if(op.includes('-')) {
+        result = total1 - total2;
+    } else if(op.includes('*')) {
+        result = total1 * total2;
+    } else if (op.includes('/')) {
+        result = total1 / total2; 
     }
 
     help.textContent = result;

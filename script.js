@@ -12,6 +12,10 @@ function clearDisplay() {
     output.value = '';
 }
 
+function del() {
+    display.value = display.value.slice(0, -1);
+}
+
 function calculateResult() {
     let input = display.value
     let result;

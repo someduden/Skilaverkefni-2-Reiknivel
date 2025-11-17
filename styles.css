@@ -61,6 +61,14 @@ section {
     display: grid;
 }
 
+.operator {
+    background-color: hsl(39, 100%, 50%)
+}
+
+.button:hover {
+    transform: translateY(1.1px);       
+}
+
 /* Evil Calculator */
 
 input[type=range][orient=vertical] {

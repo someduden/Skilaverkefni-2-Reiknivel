@@ -113,6 +113,10 @@ input[type=range][orient=vertical] {
     width: 50px;
 }
 
+#finePrint {
+    font-size: 5px;
+}
+
 /* Mobile responsiveness */
 
 @media (max-width: 600px) {

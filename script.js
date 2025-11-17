@@ -17,22 +17,23 @@ function calculateResult() {
     let result;
 
     if(input.includes('+')) {
-        let numbers = input.split('+');
-        result = Number(numbers[0]) + Number(numbers[1]);
+        let numbers = input.split('+').map(Number);
+        result = numbers.reduce((a, b) => a + b);
     } else if(input.includes('-')) {
-        let numbers = input.split('-');
-        result = Number(numbers[0]) - Number(numbers[1]);
+        let numbers = input.split('-').map(Number);
+        result = numbers.reduce((a, b) => a - b);
     } else if(input.includes('*')) {
-        let numbers = input.split('*');
-        result = Number(numbers[0]) * Number(numbers[1]);
+        let numbers = input.split('*').map(Number);
+        result = numbers.reduce((a, b) => a * b);
     } else if(input.includes('/')) {
-        let numbers = input.split('/');
-        result = Number(numbers[0]) / Number(numbers[1])
+        let numbers = input.split('/').map(Number);
+        result = numbers.reduce((a, b) => a / b);
     }
     output.value = result;
 }
 
 // I HATE EVERYTHING AND EVERYONE
+// Slider Calc
 
 const vertSlider1 = document.getElementById('verticalSlider')
 const horSlider1 = document.getElementById('horizontalSlider')
@@ -67,23 +68,6 @@ horSlider2.addEventListener('input', updateValue2);
 updateValue();
 updateValue2();
 
-// Operators
-
-const checkboxes = document.querySelectorAll('input[name="operators"]');
-
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            checkboxes.forEach(otherCheckbox => {
-                if (otherCheckbox !== this) {
-                    otherCheckbox.checked = false;
-                }
-            })
-        }
-    })
-})
-
-
 const help = document.getElementById('help')
 
 function evilCalc() {
@@ -115,3 +99,19 @@ function evilCalc() {
 }
 
 evilCalc()
+
+// Operators
+
+const checkboxes = document.querySelectorAll('input[name="operators"]');
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            })
+        }
+    })
+})

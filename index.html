@@ -19,10 +19,14 @@
 
     <main>
       <section>
-        <h3>Calculator 1</h3>
+        <h3>The Normal Calculator</h3>
         <p>
           Press the buttons on the calculator to write, the top window is for
           what you have typed and the bottom window is for your result
+        </p>
+        <p id="finePrint">
+          This calculator does not support multiple different operators in one
+          calculation
         </p>
         <div class="calcCont">
           <table class="calcWhole">
@@ -69,7 +73,7 @@
       </section>
 
       <section>
-        <h3>Calculator 2</h3>
+        <h3>Slider Calculator</h3>
         <p>
           The horizontal sliders move the number up by one and the vertical
           sliders move the number up by tens.
@@ -156,7 +160,7 @@
             <p>Value: <span id="value2">9</span></p>
           </div>
           <button onclick="evilCalc()" id="evilEqual">=</button>
-          <p><span id="help"></span></p>
+          <p>Equals: <span id="help"></span></p>
         </div>
       </section>
     </main>

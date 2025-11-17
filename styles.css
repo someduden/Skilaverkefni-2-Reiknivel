@@ -60,13 +60,6 @@ section {
     display: grid;
 }
 
-/* Footer stuff */
-
-.footer {
-    background-color: antiquewhite;
-    padding: 5px;
-}
-
 /* Evil Calculator */
 
 input[type=range][orient=vertical] {
@@ -127,4 +120,11 @@ input[type=range][orient=vertical] {
     .hell {
         flex-direction: column;
     }
+}
+
+/* Footer stuff */
+
+.footer {
+    background-color: antiquewhite;
+    padding: 5px;
 }
